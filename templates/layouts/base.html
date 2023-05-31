@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Wireless Enviroment Sensing and Monitoring</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="description"
+    content="Template para el dashboard desarrollado"
+    {% block extrastyle %}{% endblock extrastyle %}
+  />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.4/socket.io.js" integrity="sha512-aMGMvNYu8Ue4G+fHa359jcPb1u+ytAF+P2SCb+PxrjCdO3n3ZTxJ30zuH39rimUggmTwmh2u7wvQsDTHESnmfQ==" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
+  <link
+      href="//mincss.com/entireframework.min.css"
+      rel="stylesheet"
+      type="text/css"
+  />
+  {% include 'includes/styles.html' %}
+  
+</head>
+<body>
+  <script type="text/javascript" src="{{ url_for('static', filename = 'assets/js/app.js') }}"></script>
+  {% block loader %}
+    {% include 'includes/loader.html' %}
+  {% endblock loader %}
+  {% block header %}
+    {% include 'includes/navigation.html' %}
+  {% endblock header %}
+  {% block sidebar %}
+    {% include 'includes/sidebar.html' %}
+  {% endblock sidebar %}
+  {% block content %}{% endblock content %}
+  
+  {% block footer %}
+    {% include 'includes/footer.html' %}
+  {% endblock footer %}
+
+  {% include 'includes/scripts.html' %}
+
+  {% block extra_js %}{% endblock extra_js %}
+</body>
+</html>

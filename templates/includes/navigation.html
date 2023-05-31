@@ -1,0 +1,56 @@
+<!-- [ Header Topbar ] start -->
+<header class="pc-header  ">
+  <div class="m-header">
+    <a href="/" class="pc-link">
+      <!-- ========   change your logo hear   ============ -->
+      <!--<img src="{{ url_for('static', filename='assets/images/logo-dark.svg') }}" alt="" class="logo logo-lg" />-->
+    </a>
+    <h1>WESM</h1>
+    <!-- ======= Menu collapse Icon ===== -->
+    <div class="pc-h-item ">
+      <a href="#" class="pc-head-link head-link-secondary m-0" id="sidebar-hide">
+        <i class="ti ti-menu-2"></i>
+      </a>
+    </div>
+  </div>
+  <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0 text-white">
+                Username: {{username}}
+            </form>
+<div class="ms-auto  ">
+  <ul class="list-unstyled">
+    
+    <li class="pc-h-item ">
+      <label class="pc-head-link head-link-secondary arrow-none me-0">
+        <input type="checkbox" id="p_dark_mode" class="d-none">
+        <i class="ti ti-sun" id="p_mode_icon"></i>
+      </label>
+    </li>
+    
+    <li class="dropdown pc-h-item header-user-profile">
+      <a class="pc-head-link head-link-primary dropdown-toggle arrow-none me-0" data-bs-toggle="dropdown" href="#"
+        role="button" aria-haspopup="false" aria-expanded="false">
+        
+        <span>
+          <i class="ti ti-settings"></i>
+        </span>
+      </a>
+            
+      <div class="dropdown-menu dropdown-user-profile dropdown-menu-end pc-h-dropdown">
+        <div class="dropdown-header">
+            <a href="#" class="dropdown-item">
+              <i class="ti ti-key"></i>
+              <span>Change Password</span>
+            </a>
+            <a href="{{ url_for('logout') }}" class="dropdown-item">
+              <i class="ti ti-logout"></i>
+              <span>Logout</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+ </div>
+</header>
+<!-- [ Header ] end -->

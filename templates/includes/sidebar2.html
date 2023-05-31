@@ -1,0 +1,31 @@
+<!-- [ Sidebar Menu ] start -->
+<nav class="pc-sidebar">
+  <div class="navbar-wrapper">
+    <div class="m-header">
+     
+    </div>
+    <div class="navbar-content">
+      <ul class="pc-navbar">
+        <li class="pc-item pc-caption text-white">
+          <label>Menu</label>
+          <i class="ti ti-dashboard"></i>
+        </li>
+        <li class="pc-item text-white">
+          <a href="{{ url_for('home') }}" class="pc-link">
+            <span class="pc-micon"><i class="ti ti-dashboard"></i></span>
+            <span class="pc-mtext text-white">Dashboard</span></a>
+        </li>
+         <li class="pc-item text-white">
+          <a href="{{ url_for('historic') }}" class="pc-link">
+            <span class="pc-micon"><i class="ti ti-files"></i></span>
+            <span class="pc-mtext text-white">Historic</span></a>
+        </li>
+         <li class="pc-item text-white">
+          <a href="{{ url_for('historicstate') }}" class="pc-link">
+            <span class="pc-micon"><i class="ti ti-users"></i></span>
+            <span class="pc-mtext text-white">HistoricState</span></a>
+        </li>
+    </div>
+  </div>
+</nav>
+<!-- [ Sidebar Menu ] end -->

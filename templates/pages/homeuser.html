@@ -1,0 +1,269 @@
+{% extends 'layouts/base2.html' %}
+
+{% block title %} Dashboard {% endblock title %}
+{% block content %}
+  <!-- [ Main Content ] start -->
+  <div class="pc-container">
+    <div class="pc-content">
+      <!-- [ Main Content ] start -->
+      <div class="row">
+        <div class="col-xl-3 col-md-6">
+          <div class="card bg-yellow-500 dashnum-card text-white overflow-hidden">
+            <span class="round small"></span>
+            <span class="round big"></span>
+            <div class="card-body">
+              <div class="row">
+                <div class="col">
+                  <div class="avtar avtar-lg">
+                    <i class="text-white ti ti-brightness-up"></i>
+                  </div>
+                </div>
+                <div class="col-auto">
+                  <div class="btn-group">
+                  </div>
+                </div>
+              </div>
+              <span class="text-white d-block f-34 f-w-500 my-2">NODE UV</span>
+              <span id="nodeState1" class="text-white d-block f-34 f-w-500 my-2">OFF</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-md-6">
+          <div class="card bg-teal-400  dashnum-card text-white overflow-hidden">
+            <span class="round small"></span>
+            <span class="round big"></span>
+            <div class="card-body">
+              <div class="row">
+                <div class="col">
+                  <div class="avtar avtar-lg">
+                    <i class="text-white ti ti-brightness-up"></i>
+                  </div>
+                </div>
+                <div class="col-auto">
+                  <div class="btn-group">
+                  </div>
+                </div>
+              </div>
+              <span  class="text-white d-block f-34 f-w-500 my-2">NODE HUMIDITY</span>
+              <span id="nodeState2" class="text-white d-block f-34 f-w-500 my-2">OFF</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-md-6">
+          <div class="card bg-orange-700  dashnum-card text-white overflow-hidden">
+            <span class="round small"></span>
+            <span class="round big"></span>
+            <div class="card-body">
+              <div class="row">
+                <div class="col">
+                  <div class="avtar avtar-lg">
+                    <i class="text-white ti ti-brightness-up"></i>
+                  </div>
+                </div>
+                <div class="col-auto">
+                  <div class="btn-group">
+                  </div>
+                </div>
+              </div>
+              <span  class="text-white d-block f-34 f-w-500 my-2">NODE TEMP</span>
+              <span id="nodeState3" class="text-white d-block f-34 f-w-500 my-2">OFF</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-md-6">
+          <div class="card bg-gray-500   dashnum-card text-white overflow-hidden">
+            <span class="round small"></span>
+            <span class="round big"></span>
+            <div class="card-body">
+              <div class="row">
+                <div class="col">
+                  <div class="avtar avtar-lg">
+                    <i class="text-white ti ti-brightness-up"></i>
+                  </div>
+                </div>
+                <div class="col-auto">
+                  <div class="btn-group">
+                  </div>
+                </div>
+              </div>
+              <span class="text-white d-block f-34 f-w-500 my-2">NODE CO2</span>
+              <span id="nodeState4" class="text-white d-block f-34 f-w-500 my-2">OFF</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-md-6">
+          <div class="card bg-yellow-500  dashnum-card text-white overflow-hidden">
+            <span class="round small"></span>
+            <span class="round big"></span>
+            <div class="card-body">
+              <div class="row">
+                <div class="col">
+                  <div class="avtar avtar-lg">
+                    <i class="text-white ti ti-brightness-up"></i>
+                  </div>
+                </div>
+                <div class="col-auto">
+                  <div class="btn-group">
+                  </div>
+                </div>
+              </div>
+              <span id="uv" class="text-white d-block f-34 f-w-500 my-2">0.37</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-md-6">
+          <div class="card bg-teal-400 dashnum-card text-white overflow-hidden">
+            <span class="round small"></span>
+            <span class="round big"></span>
+            <div class="card-body">
+              <div class="row">
+                <div class="col">
+                  <div class="avtar avtar-lg">
+                    <i class="text-white  ti ti-droplet"></i>
+                  </div>
+                </div>
+                <div class="col-auto">
+                  <div class="btn-group">
+                  </div>
+                </div>
+              </div>
+              <span id="humidity" class="text-white d-block f-34 f-w-500 my-2">90%</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-md-6">
+          <div class="card bg-orange-700 dashnum-card text-white overflow-hidden">
+            <span class="round small"></span>
+            <span class="round big"></span>
+            <div class="card-body">
+              <div class="row">
+                <div class="col">
+                  <div class="avtar avtar-lg">
+                    <i class="text-white ti ti-temperature"></i>
+                  </div>
+                </div>
+                <div class="col-auto">
+                  <div class="btn-group">
+                  </div>
+                </div>
+              </div>
+              <span id="temperature" class="text-white d-block f-34 f-w-500 my-2">25°C</span>
+
+            </div>
+          </div>
+        </div>
+          <div class="col-xl-3 col-md-6">
+          <div class="card bg-gray-500 dashnum-card text-white overflow-hidden">
+            <span class="round small"></span>
+            <span class="round big"></span>
+            <div class="card-body">
+              <div class="row">
+                <div class="col">
+                  <div class="avtar avtar-lg">
+                    <i class="text-white ti ti-zodiac-aquarius"></i>
+                  </div>
+                </div>
+                <div class="col-auto">
+                  <div class="btn-group">
+                  </div>
+                </div>
+              </div>
+              <span id="co2" class="text-white d-block f-34 f-w-500 my-2">2337ppm</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-6 col-md-12">
+          <div class="card">
+            <div class="card-body">
+              <div class="row mb-3 align-items-center">
+                <div class="col">
+                  <h1>Humidity Graph</h1>
+                </div>
+                <div class="col-auto">
+                </div>
+              </div>
+              <div class="container">
+      <div class="hero">
+        <div class="chart-container">
+          <canvas id="myChart" width="100" height="100"></canvas>
+        </div>
+      </div>
+    </div>
+            </div>
+          </div>
+        </div>
+         <div class="col-xl-6 col-md-12">
+          <div class="card">
+            <div class="card-body">
+              <div class="row mb-3 align-items-center">
+                <div class="col ">
+                      <h1>Temperature Graph</h1>
+                </div>
+                <div class="col-auto">
+                </div>
+              </div>
+             <div class="container">
+      <div class="hero">
+    
+        <div class="chart-container">
+          <canvas id="myChart2" width="100" height="100"></canvas>
+        </div>
+      </div>
+    </div>
+            </div>
+          </div>
+        </div>
+         <div class="col-xl-6 col-md-12">
+          <div class="card">
+            <div class="card-body">
+              <div class="row mb-3 align-items-center">
+                <div class="col">
+                   <h1>CO2 Graph</h1>
+                </div>
+                <div class="col-auto">
+                </div>
+              </div>
+               <div class="container">
+      <div class="hero">
+        <div class="chart-container">
+          <canvas id="myChart3" width="100" height="100"></canvas>
+        </div>
+      </div>
+    </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-6 col-md-12">
+          <div class="card">
+            <div class="card-body">
+              <div class="row mb-3 align-items-center">
+                <div class="col">
+                  <h1>UV Graph</h1>
+                </div>
+                <div class="col-auto">
+                </div>
+              </div>
+                 <div class="container">
+      <div class="hero">
+        <div class="chart-container">
+          <canvas id="myChart4" width="200" height="200"></canvas>
+        </div>
+      </div>
+    </div>
+            </div>
+          </div>
+        </div>
+        <!-- [ sample-page ] end -->
+      </div>
+      <!-- [ Main Content ] end -->
+    </div>
+  </div>
+  <!-- [ Main Content ] end -->
+{% endblock content %}
+
+{% block extra_js %}
+  <!-- Apex Chart -->
+  <script src="{{ url_for('static', filename='assets/js/plugins/apexcharts.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets/js/pages/dashboard-default.js') }}"></script>
+  <!-- [Page Specific JS] end -->
+{% endblock extra_js %}

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+    <head>
+         <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+        <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>  
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css" />
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <title>Wireless Enviroment Sensind and Monitoring</title>
+        <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+        <link href="../static/assets/css/styles2.css" rel="stylesheet" />
+        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.1/bootstrap3-editable/css/bootstrap-editable.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.1/bootstrap3-editable/js/bootstrap-editable.js"></script>
+        <script type="text/javascript" language="javascript">
+            $(document).ready(function(){
+                var dataTable=$('#sample_data').DataTable();
+            });
+        </script>
+    </head>
+    <body class="sb-nav-fixed">
+        <br>
+        <br>
+        <Br>
+        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-success">
+            <!-- Navbar Brand-->
+            <a class="navbar-brand ps-3" href="#">Wireless Enviroment Sensing and Monitoring</a>
+            <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0 text-white">
+                <a href="{{ url_for('logout') }}"class="text-white">
+                Logout
+                </a>
+            </form>
+            <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0 text-white">
+                Username: {{username}}
+            </form>
+           
+        </nav>
+        <br>
+        <br>
+        <br>
+         <div class="container ">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table id="sample_data" class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>CI</th>
+                                    <th>Firstname</th>
+                                    <th>Lastname</th>
+                                    <th>Second lastname</th>
+                                    <th>Birthdate</th>
+                                    <th>Gender</th>
+                                    <th>Name</th>
+                                    <th>Role</th>
+                                    <th>Email</th>
+                                    <th>Register date</th>
+                                    <th>Last update</th>
+                                    <th>User ID</th>
+                                </tr>
+                            </thead>
+                              <tbody>
+                                {% for row in users%}
+                                <tr>
+                                    <td>{{row[1]}}</td>
+                                    <td>{{row[2]}}</td>
+                                    <td>{{row[3]}}</td>
+                                    <td>{{row[4]}}</td>
+                                    <td>{{row[5].year}}-{{row[5].month}}-{{row[5].day}}</td>
+                                    <td>{{row[6]}}</td>
+                                    <td>{{row[7]}}</td>
+                                    <td>{{row[9]}}</td>
+                                    <td>{{row[10]}}</td>
+                                    <td>{{row[12]}}</td>
+                                    <td>{{row[13]}}</td>
+                                    <td>{{row[14]}}</td>
+                                </tr>
+                                {% endfor %}
+                            </body>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div> 
+        <div class="row">
+            <div class="col-md-5 offset-md-1">
+                <div class="card card-body">
+                    <form action='' method = "POST">
+                        <h1>Create user</h1>
+                        <div class="form-group">
+                            <input type = "text" name = "ci" placeholder="CI" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                        <input type = "text" name = "firstname" placeholder="Firstname" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                        <input type = "text" name = "lastname" placeholder="Lastname" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                        <input type = "text" name = "secondLastname" placeholder="Second lastname" class="form-control"/>
+                        </div>
+                        <div class="form-group">
+                        <input type = "date" name = "birthdate" placeholder="Birth date" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <select name="gender" class="form-control" placeholder="Gender">
+                                <option value="F">F</option>
+                                <option value="M">M</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                             <select name="role" class="form-control" placeholder="Role">
+                                <option value="administrador">administrador</option>
+                                <option value="usuario">usuario</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                        <input type = "text" name = "email"placeholder="email" class="form-control"/>
+                        </div>
+                        <div class="form-group">
+                              <button name='1' value ="1" type="submit" class="btn btn-primary btn-block">
+                                    Insert
+                              </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+           <div class="col-md-5 offset-md-0">
+                <div class="card card-body">
+                    <form action='' method = "POST">
+                        <h1>Update user</h1>
+                        <div class="form-group">
+                            <input type = "text" name = "ci3" placeholder="CI" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                        <input type = "text" name = "firstname3" placeholder="Firstname" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                        <input type = "text" name = "lastname3" placeholder="Lastname" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                        <input type = "text" name = "secondLastname3" placeholder="Second lastname" class="form-control"/>
+                        </div>
+                        <div class="form-group">
+                        <input type = "date" name = "birthdate3" placeholder="Birth date" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <select name="gender3" class="form-control" placeholder="Gender">
+                                <option value="F">F</option>
+                                <option value="M">M</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                             <select name="role3" class="form-control" placeholder="Role">
+                                <option value="administrador">administrador</option>
+                                <option value="usuario">usuario</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                        <input type = "text" name = "email3"placeholder="email" class="form-control"/>
+                        </div>
+                        <div class="form-group">
+                              <button name='1' value ="3" type="submit" class="btn btn-primary btn-block">
+                                    Insert
+                              </button>
+                        </div>
+                    </form>
+                </div>  
+        </div>
+        <h1><br></h1>
+        <div class="row">
+           <div class="col-md-3 offset-md-5">
+                <div class="card card-body">
+                    <form action='' method = "POST">
+                        <h1>Delete user</h1>
+                        <div class="form-group">
+                            <input type = "text" name = "ci2" placeholder="CI" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                              <button name='1' value ="2" type="submit" class="btn btn-primary btn-block">
+                                    Delete
+                              </button>
+                        </div>
+                    </form>
+            </div>
+        </div>            
+    </body>
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
+</html>
